@@ -1,0 +1,9 @@
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\bin\Debug\MPLeaderProcess.exe.config
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\bin\Debug\MPLeaderProcess.exe
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\bin\Debug\MPLeaderProcess.pdb
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\bin\Debug\MPI.dll
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\bin\Debug\MPIUtils.dll
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\bin\Debug\MPI.xml
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\obj\Debug\MPLeaderProcess.csproj.CoreCompileInputs.cache
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\obj\Debug\MPLeaderProcess.exe
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPLeaderProcess\MPLeaderProcess\obj\Debug\MPLeaderProcess.pdb

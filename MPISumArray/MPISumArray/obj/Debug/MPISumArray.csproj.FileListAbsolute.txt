@@ -1,0 +1,10 @@
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\bin\Debug\MPISumArray.exe.config
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\bin\Debug\MPISumArray.exe
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\bin\Debug\MPISumArray.pdb
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\bin\Debug\MPI.dll
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\bin\Debug\MPIUtils.dll
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\bin\Debug\MPI.xml
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\obj\Debug\MPISumArray.csprojResolveAssemblyReference.cache
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\obj\Debug\MPISumArray.csproj.CoreCompileInputs.cache
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\obj\Debug\MPISumArray.exe
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISumArray\MPISumArray\obj\Debug\MPISumArray.pdb

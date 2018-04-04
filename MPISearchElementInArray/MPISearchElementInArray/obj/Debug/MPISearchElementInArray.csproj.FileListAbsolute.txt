@@ -1,0 +1,9 @@
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\bin\Debug\MPISearchElementInArray.exe.config
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\bin\Debug\MPISearchElementInArray.exe
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\bin\Debug\MPISearchElementInArray.pdb
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\bin\Debug\MPI.dll
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\bin\Debug\MPIUtils.dll
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\bin\Debug\MPI.xml
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\obj\Debug\MPISearchElementInArray.csproj.CoreCompileInputs.cache
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\obj\Debug\MPISearchElementInArray.exe
+E:\My work\Anul3Sem2\AlgoritmiParaleli_si_Distribuiti\MPISearchElementInArray\MPISearchElementInArray\obj\Debug\MPISearchElementInArray.pdb

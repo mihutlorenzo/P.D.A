@@ -1,0 +1,7 @@
+D:\Work\ProducerConsumer\ProducerConsumer\bin\Debug\ProducerConsumer.exe.config
+D:\Work\ProducerConsumer\ProducerConsumer\bin\Debug\ProducerConsumer.exe
+D:\Work\ProducerConsumer\ProducerConsumer\bin\Debug\ProducerConsumer.pdb
+D:\Work\ProducerConsumer\ProducerConsumer\obj\Debug\ProducerConsumer.csprojResolveAssemblyReference.cache
+D:\Work\ProducerConsumer\ProducerConsumer\obj\Debug\ProducerConsumer.csproj.CoreCompileInputs.cache
+D:\Work\ProducerConsumer\ProducerConsumer\obj\Debug\ProducerConsumer.exe
+D:\Work\ProducerConsumer\ProducerConsumer\obj\Debug\ProducerConsumer.pdb
