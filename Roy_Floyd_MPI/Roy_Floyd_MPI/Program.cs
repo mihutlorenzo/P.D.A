@@ -27,83 +27,53 @@ namespace Roy_Floyd_MPI
             {
 
                 Intracommunicator comm = Communicator.world;
-                int[] columnData = new int[comm.Size];
-
-                for (int k = 0; k < 5; k++)
-                {
-                    for (int j = 0; j < 5; j++)
-                    {
-                        if (graph[j, k] != INF && graph[k, comm.Rank] != INF)
-                        {
-                            if (graph[j, k] + graph[k, comm.Rank] < graph[j ,comm.Rank])
-                            {
-                                graph[j, comm.Rank] = graph[j, k] + graph[k, comm.Rank];
-                                
-                                comm.Broadcast(ref graph[j, comm.Rank], comm.Rank);
-                            }
-                        }
-                        comm.Barrier();
-                    }
-                    
-
-
-
-                    //for (int i = 0; i < 5; i++)
-                    //{
-                    //    for (int index = 0; index < 5; index++)
-                    //    {
-                    //        columnData[index] = graph[i,index];
-                    //        Console.Write("line number {1} data {0}", graph[i, index],i);
-                    //    }
-                    //    Console.WriteLine();
-                    //    int[] results = comm.Alltoall(columnData);
-                    //    for(int index =0; index<5;index++)
-                    //    {
-                    //        Console.Write("line number {1} data {0}", results[index],i);
-                    //        graph[i, index] = results[index];
-                    //    }
-
-                    //}
-
-
-
-                    //for (int i = 0; i < 5; i++)
-                    //{
-                    //    int[] data = comm.Gather(graph[comm.Rank, i], 0);
-                    //    if (comm.Rank == 0)
-                    //    {
-                    //        for (int z = 0; z < 5; z++)
-                    //        {
-                    //            graph[z, i] = data[z];
-
-                    //        }
-                    //    }
-                    //}
-
-                    //if (comm.Rank == 0)
-                    //{
-                    //    for (int z = 0; z < 5; z++)
-                    //        for (int y = 0; y < 5; y++)
-                    //        {
-                    //            comm.Broadcast(ref graph[z, y], 0);
-                    //        }
-                    //    Console.WriteLine("Pasul {0}", k);
-                    //    Print(ref graph, 5);
-                    //}
-                }
-                if (comm.Rank == 0)
-                {
-                   Print(ref graph, 5);
-                }
-
                 
 
+                for (int k = 0; k < comm.Size; k++)
+                {
+                    for (int i = 0; i < comm.Size; i++)
+                    {
+                        
+                        if (graph[i, k] != INF && graph[k, comm.Rank] != INF)
+                        {
+                            if (graph[i, k] + graph[k, comm.Rank] < graph[i, comm.Rank])
+                            {
+                                graph[i, comm.Rank] = graph[i, k] + graph[k, comm.Rank];
+                               
+                                Console.WriteLine("noua valoare a nodului cu x {0} si y {1} la pasul {3} este {2}", i, comm.Rank, graph[i, comm.Rank], k);
+                                
+                            }
+                        }
+                        
+                         int[] lineData= comm.Gather(graph[i, comm.Rank], 0);
+                        
+                        comm.Barrier();
+                        if (comm.Rank == 0)
+                        {
+                            Console.Write("Pe linia cu numarul {0} din pasul {1} avem elementele :", i, k);
+                            for (int j = 1; j < comm.Size; j++)
+                            {
+                                Console.Write("{0}   ",lineData[j]);
+                                graph[i, j] = lineData[j];
+                                comm.Broadcast(ref graph[i, j], 0);
+
+                            }
+                            Console.WriteLine();
+                        }
+                        comm.Barrier();
+                        
+
+
+                    }
+                }
+                if(comm.Rank ==0)
+                    Print(graph,comm.Size);
+
             }
-
-
         }
+    
 
-        public static void Print(ref int[,] graph, int verticesCount)
+        public static void Print(int[,] graph, int verticesCount)
         {
             Console.WriteLine("Shortest distances between every pair of vertices:");
             for (int i = 0; i < verticesCount; i++)
@@ -137,8 +107,9 @@ namespace Roy_Floyd_MPI
                     }
                 }
             }
-            Print(ref graph, verticesCount);
+            Print(graph, verticesCount);
 
         }
     }
+
 }
