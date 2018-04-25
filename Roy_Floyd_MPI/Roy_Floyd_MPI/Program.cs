@@ -13,13 +13,13 @@ namespace Roy_Floyd_MPI
 
         static void Main(string[] args)
         {
-            //int[,] graph = {
-            //                    { 0  , 2  , INF, 10 , INF },
-            //                    { 2  , 0  , 3  , INF, INF },
-            //                    { INF, 3  , 0  , 1  , 8   },
-            //                    { 10 , INF, 1  , 0  , INF },
-            //                    { INF, INF, 8  , INF, 0   }
-            //                };
+            int[,] graph = {
+                                { 0  , 2  , INF, 10 , INF },
+                                { 2  , 0  , 3  , INF, INF },
+                                { INF, 3  , 0  , 1  , 8   },
+                                { 10 , INF, 1  , 0  , INF },
+                                { INF, INF, 8  , INF, 0   }
+                            };
 
 
             //FloydWarshall(ref graph, 5);
@@ -27,72 +27,76 @@ namespace Roy_Floyd_MPI
             {
 
                 Intracommunicator comm = Communicator.world;
-                int[,] graph = new int[5,5];
+                int[] columnData = new int[comm.Size];
 
+                for (int k = 0; k < 5; k++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (graph[j, k] != INF && graph[k, comm.Rank] != INF)
+                        {
+                            if (graph[j, k] + graph[k, comm.Rank] < graph[j ,comm.Rank])
+                            {
+                                graph[j, comm.Rank] = graph[j, k] + graph[k, comm.Rank];
+                                
+                                comm.Broadcast(ref graph[j, comm.Rank], comm.Rank);
+                            }
+                        }
+                        comm.Barrier();
+                    }
+                    
+
+
+
+                    //for (int i = 0; i < 5; i++)
+                    //{
+                    //    for (int index = 0; index < 5; index++)
+                    //    {
+                    //        columnData[index] = graph[i,index];
+                    //        Console.Write("line number {1} data {0}", graph[i, index],i);
+                    //    }
+                    //    Console.WriteLine();
+                    //    int[] results = comm.Alltoall(columnData);
+                    //    for(int index =0; index<5;index++)
+                    //    {
+                    //        Console.Write("line number {1} data {0}", results[index],i);
+                    //        graph[i, index] = results[index];
+                    //    }
+
+                    //}
+
+
+
+                    //for (int i = 0; i < 5; i++)
+                    //{
+                    //    int[] data = comm.Gather(graph[comm.Rank, i], 0);
+                    //    if (comm.Rank == 0)
+                    //    {
+                    //        for (int z = 0; z < 5; z++)
+                    //        {
+                    //            graph[z, i] = data[z];
+
+                    //        }
+                    //    }
+                    //}
+
+                    //if (comm.Rank == 0)
+                    //{
+                    //    for (int z = 0; z < 5; z++)
+                    //        for (int y = 0; y < 5; y++)
+                    //        {
+                    //            comm.Broadcast(ref graph[z, y], 0);
+                    //        }
+                    //    Console.WriteLine("Pasul {0}", k);
+                    //    Print(ref graph, 5);
+                    //}
+                }
                 if (comm.Rank == 0)
                 {
-                    graph[0, 0] = 0;
-                    graph[0, 1] = 2;
-                    graph[0, 2] = INF;
-                    graph[0, 3] = 10;
-                    graph[0, 4] = INF;
-                    graph[1, 0] = 2;
-                    graph[1, 1] = 0;
-                    graph[1, 2] = 3;
-                    graph[1, 3] = INF;
-                    graph[1, 4] = INF;
-                    graph[2, 0] = INF;
-                    graph[2, 1] = 3;
-                    graph[2, 2] = 0;
-                    graph[2, 3] = 1;
-                    graph[2, 4] = 8;
-                    graph[3, 0] = 10;
-                    graph[3, 1] = INF;
-                    graph[3, 2] = 1;
-                    graph[3, 3] = 0;
-                    graph[3, 4] = INF;
-                    graph[4, 0] = INF;
-                    graph[4, 1] = INF;
-                    graph[4, 2] = 8;
-                    graph[4, 3] = INF;
-                    graph[4, 4] = 0;
+                   Print(ref graph, 5);
                 }
 
-                //for (int k = 0; k < 5; k++)
-                //    {
-                //    for (int j = 0; j < 5; j++)
-                //    {
-                //        if (graph[comm.Rank, k] != INF && graph[k, j] != INF)
-                //        {
-                //            if (graph[comm.Rank, k] + graph[k, j] < graph[comm.Rank, j])
-                //            {
-                //                graph[comm.Rank, j] = graph[comm.Rank, k] + graph[k, j];
-                //            }
-                //        }
-                //    }
-                //    for (int i = 0; i < 5; i++)
-                //    {
-                //        comm.Broadcast(ref graph[comm.Rank, i], comm.Rank);
-                //    }
-                //    comm.Barrier();
-                //    if (comm.Rank == 0)
-                //    {
-                //        Console.WriteLine("Pasul {0}", k);
-                //        Print(ref graph, 5);
-                //    }
-                //}
-                //if (comm.Rank == 0)
-                //{
-                //    Print(ref graph, 5);
-                //}
-
-                for (int i = 0; i < 5; i++)
-                {
-                    comm.Broadcast(ref graph[comm.Rank, i], comm.Rank);
-                }
-
-                Console.WriteLine("Procesul cu rankul {0}", comm.Rank);
-                Print(ref graph, 5);
+                
 
             }
 
